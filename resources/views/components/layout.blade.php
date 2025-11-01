@@ -1,6 +1,5 @@
 <head>
   <script src="https://cdn.tailwindcss.com"></script>
-  @vite(['resources/css/app.css', "resources/js/app.js"])
 
 
   <style>
@@ -33,6 +32,8 @@
   </style>
 </head>
 <body class="bg-coffee-foam">
+@livewireStyles
+@livewireScripts
   <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
   <nav class="relative bg-coffee-dark after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">

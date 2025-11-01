@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Role;
+use App\Models\Comment;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -27,6 +28,13 @@ class DatabaseSeeder extends Seeder
             "password" => bcrypt("30ianpdi")
         ]);
         
-        $user->posts()->save(Post::factory()->make());
+        $post = Post::factory()->create([
+            'user_id' => $user->id
+        ]);
+
+        Comment::factory()->create([
+            'post_id' => $post->id,
+            'user_id' => $user->id
+        ]);
     }
 }
